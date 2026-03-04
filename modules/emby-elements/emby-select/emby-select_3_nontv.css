@@ -1,0 +1,5 @@
+@media all and (pointer: fine) {
+    .emby-select-wrapper {
+        height: 2.4em;
+    }
+}

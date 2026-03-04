@@ -1,0 +1,3 @@
+.mouseIdle .hide-mouse-idle-tv:not(:focus) {
+    display: none !important;
+}

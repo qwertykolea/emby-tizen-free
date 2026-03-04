@@ -1,0 +1,33 @@
+.squareCard-xGrid {
+    width: 7em;
+    /*    width: calc((58.5vh / 3));
+*/
+}
+
+.portraitCard-xGrid {
+    width: 7em;
+    /*    width: calc((60.5vh / 2) * (2 / 3));
+*/
+}
+
+.fourThreeCard-xGrid {
+    width: 9em;
+    /*    width: calc((56vh / 3) * (4 / 3));
+*/
+}
+
+.backdropCard-xGrid {
+    width: 12em;
+    /*    width: calc((56vh / 3) * (16 / 9));
+*/
+}
+
+.wideSpotlightCard {
+    width: 24em !important;
+}
+
+.spotlightButtonCardContent-horizontal {
+    height: calc((55vh / 3) - .6em);
+    aspect-ratio: initial !important;
+    padding-bottom: 0 !important;
+}

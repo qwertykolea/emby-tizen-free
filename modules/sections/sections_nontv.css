@@ -1,0 +1,59 @@
+.padded-top-focusscale {
+    /* needed in non-tv mode for the touchzoom effect, but too much and it makes the see all button hard to click on iOS */
+    padding-top: .5em;
+    margin-top: -.5em;
+}
+
+.padded-bottom-focusscale {
+    padding-bottom: .5em;
+    margin-bottom: -.5em;
+}
+
+.padded-left-focusscale {
+    padding-left: .5em;
+    margin-left: -.5em;
+}
+
+.padded-right-focusscale {
+    padding-right: .5em;
+    margin-right: -.5em;
+}
+
+@media all and (min-width: 60em) {
+
+    .page-withDockedDrawer .padded-left {
+        -webkit-padding-start: 2rem;
+        padding-inline-start: 2rem;
+    }
+
+    .page-withDockedDrawer .padded-right {
+        -webkit-padding-end: 2rem;
+        padding-inline-end: 2rem;
+    }
+}
+
+@media all and (min-width: 90em) {
+
+    .page-withDockedDrawer .padded-left {
+        -webkit-padding-start: 3rem;
+        padding-inline-start: 3rem;
+    }
+
+    .page-withDockedDrawer .padded-right {
+        -webkit-padding-end: 3rem;
+        padding-inline-end: 3rem;
+    }
+}
+
+@media all and (min-width: 60em) {
+
+    .page-withDockedDrawer .padded-right-withalphapicker {
+        -webkit-padding-end: 3rem;
+        padding-inline-end: 3rem;
+    }
+
+    .page-withDockedDrawer .padded-right-withlist.padded-right-withalphapicker {
+        -webkit-padding-end: 3rem;
+        padding-inline-end: 3rem;
+    }
+}

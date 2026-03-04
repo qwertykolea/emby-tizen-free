@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://emby.media" version="2.3.2" viewmodes="maximized">
+  <access origin="https://crackemby.mb6.top" subdomains="true"></access>
+  <access origin="https://emby.media" subdomains="true"></access>
+  <access origin="*" subdomains="true"></access>
+  <tizen:application id="vYmY3AFREE.emby" package="vYmY3AFREE" required_version="2.3"/>
+  <tizen:app-control>
+    <tizen:src name='index.html' reload='disable'></tizen:src>
+    <tizen:operation name='http://samsung.com/appcontrol/operation/eden_resume'></tizen:operation>
+  </tizen:app-control>
+  <content src="index.html"/>
+  <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
+  <icon src="logo.png"/>
+  <name>Emby Free</name>
+  
+  <tizen:metadata key="http://samsung.com/tv/metadata/use.preview" value="bg_service"/>
+  <tizen:metadata key="http://samsung.com/tv/metadata/devel.api.version" value="2.4"/>
+  <tizen:metadata key="http://samsung.com/tv/metadata/prelaunch.support" value="true"/>
+  <tizen:privilege name="http://developer.samsung.com/privilege/avplay"/>
+  <tizen:privilege name="http://developer.samsung.com/privilege/productinfo"/>
+  <tizen:privilege name="http://developer.samsung.com/privilege/network.public"/>
+  <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+  <tizen:privilege name="http://tizen.org/privilege/internet"/>
+  <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+  <tizen:privilege name="http://tizen.org/privilege/tv.audio"/>
+  <tizen:privilege name="http://tizen.org/privilege/tv.display"/>
+  <tizen:privilege name="http://tizen.org/privilege/download"/>
+  <tizen:privilege name="http://tizen.org/privilege/filesystem.read"/>
+  <tizen:privilege name="http://tizen.org/privilege/filesystem.write"/>
+  <tizen:profile name="tv"/>
+
+  <tizen:service id='vYmY3AFREE.service'>
+    <tizen:content src='native/tizen/service/service.js'></tizen:content>
+    <tizen:name>service</tizen:name>
+    <tizen:icon src='icon.png'></tizen:icon>
+    <tizen:description>Service Application</tizen:description>
+    <tizen:metadata key='meta-key' value='meta-value'></tizen:metadata>
+    <tizen:category name='http://tizen.org/category/service'></tizen:category>
+  </tizen:service>
+
+  <tizen:setting pointing-device-support="disable" ></tizen:setting>
+</widget>

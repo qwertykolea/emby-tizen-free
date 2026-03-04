@@ -1,0 +1,9 @@
+.genericUIWizardButton {
+    /* don't have them consume the full width of the dialog since there will be multiple */
+    width: auto !important;
+}
+
+.mainSubTitle {
+    -webkit-user-select: none;
+    user-select: none;
+}

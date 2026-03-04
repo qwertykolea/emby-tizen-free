@@ -1,0 +1,3 @@
+.mouseIdle, .mouseIdle button, .mouseIdle select, .mouseIdle input, .mouseIdle textarea, .mouseIdle a, .mouseIdle label {
+    cursor: none !important;
+}

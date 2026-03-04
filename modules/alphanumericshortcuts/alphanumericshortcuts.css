@@ -1,0 +1,20 @@
+.alphanumeric-shortcut {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    inset-inline-start: initial;
+    inset-inline-end: 5%;
+    /* Needs to be higher than dialogHelper */
+    z-index: 9999999;
+    font-size: 500%;
+    padding: 0 .5em .1em;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border-radius: .42em;
+    /* Remove any border applied by the dialog class */
+    border: 0 !important;
+}

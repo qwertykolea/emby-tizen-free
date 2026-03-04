@@ -1,0 +1,68 @@
+define(["exports", "./../modules/tabbedview/tabbedview.js", "./../modules/common/globalize.js", "./../modules/maintabsmanager.js", "./../modules/layoutmanager.js", "./../modules/common/usersettings/usersettings.js", "./../modules/emby-elements/emby-scroller/emby-scroller.js", "./../modules/emby-elements/emby-button/emby-button.js"], function (_exports, _tabbedview, _globalize, _maintabsmanager, _layoutmanager, _usersettings, _embyScroller, _embyButton) {
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  /* jshint module: true */
+
+  function getTabs() {
+    return [{
+      name: _globalize.default.translate('Home'),
+      id: 'home'
+    }, {
+      name: _globalize.default.translate('Favorites'),
+      id: 'favorites'
+    }];
+  }
+  function HomeView(view, params) {
+    _tabbedview.default.apply(this, arguments);
+    this.enableBackMenu = true;
+  }
+  Object.assign(HomeView.prototype, _tabbedview.default.prototype);
+  HomeView.prototype.getTabs = getTabs;
+  HomeView.prototype.getAutoBackdropItemTypes = function () {
+    return ['Movie', 'Series', 'Game', 'Book'];
+  };
+  HomeView.prototype.setTitle = function () {
+    // handled by setting defaultTitle on the route
+  };
+  HomeView.prototype.supportsHorizontalTabScroll = function () {
+    return true;
+  };
+  HomeView.prototype.tabScrollDirection = function () {
+    if (this.supportsHorizontalTabScroll()) {
+      if (_layoutmanager.default.tv && _usersettings.default.tvHome() === 'horizontal') {
+        return 'x';
+      }
+    }
+    return 'y';
+  };
+  HomeView.prototype.onPause = function () {
+    _tabbedview.default.prototype.onPause.call(this);
+  };
+  HomeView.prototype.destroy = function () {
+    _tabbedview.default.prototype.destroy.apply(this, arguments);
+  };
+  HomeView.prototype.loadTabController = function (id) {
+    switch (id) {
+      case 'home':
+        return Emby.importModule('./home/hometab.js');
+      case 'favorites':
+        return Emby.importModule('./home/favorites.js');
+      default:
+        throw new Error('tab not found: ' + id);
+    }
+  };
+  HomeView.prototype.onWindowInputCommand = function (e) {
+    switch (e.detail.command) {
+      case 'home':
+        _maintabsmanager.default.selectedTabIndex(0);
+        e.preventDefault();
+        return;
+      default:
+        break;
+    }
+    _tabbedview.default.prototype.onWindowInputCommand.apply(this, arguments);
+  };
+  var _default = _exports.default = HomeView;
+});

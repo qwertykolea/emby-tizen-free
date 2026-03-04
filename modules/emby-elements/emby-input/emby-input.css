@@ -1,0 +1,61 @@
+.emby-input {
+    display: block;
+    margin: 0;
+    margin-bottom: 0 !important;
+    /* Remove select styling */
+    font-size: inherit;
+    /* General select styles: change as needed */
+    font-family: inherit;
+    font-weight: inherit;
+    padding: 0 1ch;
+    height: 3em;
+    /* Prevent padding from causing width overflow */
+    box-sizing: border-box;
+    outline: none !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    border-radius: .3em;
+    letter-spacing: inherit;
+}
+
+.emby-input::-webkit-input-placeholder {
+    font-family: inherit;
+}
+
+.emby-input::placeholder {
+    font-family: inherit;
+}
+
+.emby-input:disabled {
+    opacity: 0.5;
+}
+
+.emby-input::-moz-focus-inner {
+    border: 0;
+}
+
+.inputContainer {
+    margin-bottom: 1.5em;
+}
+
+.inputLabel {
+    display: inline-block;
+    margin-bottom: .1em;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.emby-input-iconbutton {
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+}
+
+.emby-input-actionsheet {
+    font-size: 92%;
+    width: 24em !important;
+}
+
+.emby-input-text-security {
+    -moz-text-security: disc;
+    -webkit-text-security: disc;
+}

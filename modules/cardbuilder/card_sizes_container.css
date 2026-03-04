@@ -1,0 +1,300 @@
+/*@supports (width: 1cqw) {
+
+    :root {
+        --backdrop-cards: 1;
+        --small-sidefooter-cards: 1.3;
+        --sidefooter-cards: 1;
+        --banner-cards: 1;
+        --four-three-cards: 2;
+        --square-cards: 2;
+        --portrait-cards: 3;
+        --user-cards-size-adjust: 0;
+    }
+
+    .fourThreeCard {
+        width: calc(100cqw / max((var(--four-three-cards) + var(--user-cards-size-adjust)), 2));
+    }
+
+    .backdropCard {
+        width: calc(100cqw / max((var(--backdrop-cards) + var(--user-cards-size-adjust)), 1));
+    }
+
+    .squareCard {
+        width: calc(100cqw / max((var(--square-cards) + var(--user-cards-size-adjust)), 2));
+    }
+
+    .portraitCard {
+        width: calc(100cqw / max((var(--portrait-cards) + var(--user-cards-size-adjust)), 3));
+    }
+
+    .bannerCard {
+        width: calc(100cqw / max((var(--banner-cards) + var(--user-cards-size-adjust)), 1));
+    }
+
+    .sideFooterCard {
+        width: calc(100cqw / max((var(--sidefooter-cards) + var(--user-cards-size-adjust)), 1));
+    }
+
+    .smallSideFooterCard {
+        width: calc(100cqw / max((var(--small-sidefooter-cards) + var(--user-cards-size-adjust)), 1));
+    }
+
+    @media all and (orientation: landscape) {
+
+        :root {
+            --backdrop-cards: 2;
+        }
+    }
+
+    @media all and (orientation: portrait) {
+        @container itemscontainer-cards (min-width: 24em) {
+
+            .card {
+                --backdrop-cards: 2;
+            }
+        }
+    }
+
+    @media all and (orientation: portrait) {
+        @container itemscontainer-cards (min-width: 31.25em) {
+
+            .card {
+                --square-cards: 3;
+            }
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 31.25em) {
+
+        .card {
+            --four-three-cards: 3;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 36em) {
+        .card {
+            --square-cards: 3;
+            --portrait-cards: 4;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 40em) {
+        .card {
+            --square-cards: 4;
+            --small-sidefooter-cards: 2;
+        }
+    }
+
+    @media all and (orientation: landscape) {
+        @container itemscontainer-cards (min-width: 40em) {
+            .card {
+                --portrait-cards: 5;
+            }
+        }
+    }
+
+    @media all and (orientation: landscape) {
+        @container itemscontainer-cards (min-width: 50em) {
+            .card {
+                --square-cards: 5;
+            }
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 45em) {
+        .card {
+            --four-three-cards: 4;
+            --sidefooter-cards: 2;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 50em) {
+        .card {
+            --small-sidefooter-cards: 3;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 50em) {
+
+        .card {
+            --backdrop-cards: 3;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 55em) {
+        .card {
+            --banner-cards: 2;
+            --square-cards: 5;
+            --portrait-cards: 5;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 62.5em) {
+
+        .card {
+            --backdrop-cards: 4;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 66em) {
+        .card {
+            --small-sidefooter-cards: 4;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 70em) {
+        .card {
+            --four-three-cards: 5;
+            --square-cards: 6;
+            --portrait-cards: 6;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 76em) {
+        .card {
+            --sidefooter-cards: 3;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 82.5em) {
+        .card {
+            --backdrop-cards: 5;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 85em) {
+        .card {
+            --square-cards: 7;
+            --portrait-cards: 7;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 100em) {
+        .card {
+            --banner-cards: 3;
+            --small-sidefooter-cards: 5;
+            --four-three-cards: 6;
+            --square-cards: 8;
+            --portrait-cards: 8;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 115em) {
+        .card {
+            --small-sidefooter-cards: 6;
+            --portrait-cards: 9;
+            --square-cards: 9;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 120em) {
+        .card {
+            --small-sidefooter-cards: 6;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 130em) {
+        .card {
+            --square-cards: 10;
+            --portrait-cards: 10;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 131.25em) {
+        .card {
+            --backdrop-cards: 6;
+            --four-three-cards: 7;
+            --sidefooter-cards: 4;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 145em) {
+        .card {
+            --square-cards: 11;
+            --portrait-cards: 11;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 150em) {
+        .card {
+            --banner-cards: 4;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 160em) {
+        .card {
+            --backdrop-cards: 7;
+            --small-sidefooter-cards: 7;
+            --four-three-cards: 8;
+            --square-cards: 12;
+            --portrait-cards: 12;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 175em) {
+        .card {
+            --square-cards: 13;
+            --portrait-cards: 13;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 180em) {
+        .card {
+            --small-sidefooter-cards: 8;
+            --four-three-cards: 9;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 190em) {
+        .card {
+            --square-cards: 14;
+            --portrait-cards: 14;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 200em) {
+        .card {
+            --banner-cards: 5;
+            --sidefooter-cards: 5;
+            --backdrop-cards: 8;
+            --small-sidefooter-cards: 9;
+            --four-three-cards: 10;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 205em) {
+        .card {
+            --square-cards: 15;
+            --portrait-cards: 15;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 220em) {
+        .card {
+            --sidefooter-cards: 6;
+            --backdrop-cards: 9;
+            --small-sidefooter-cards: 10;
+            --four-three-cards: 11;
+            --square-cards: 16;
+            --portrait-cards: 16;
+        }
+    }
+
+    @container itemscontainer-cards (min-width: 240em) {
+        .card {
+            --banner-cards: 6;
+            --sidefooter-cards: 7;
+            --small-sidefooter-cards: 11;
+            --four-three-cards: 12;
+            --square-cards: 17;
+            --portrait-cards: 17;
+        }
+    }
+
+    @container itemscontainer-cards (max-width: 35em) {
+        .scrollX .card {
+            --backdrop-cards: 1.2;
+        }
+    }
+}
+*/

@@ -1,0 +1,216 @@
+:root {
+    --headerlogo-background-position: left center;
+}
+
+.rtl:root {
+    --headerlogo-background-position: right center;
+}
+
+.pageTitle {
+    vertical-align: middle;
+    margin: 0;
+    -webkit-align-items: center;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pageTitleWithLogo {
+    background-position: left center;
+    background-position: var(--headerlogo-background-position);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 10.25em;
+    height: 1.25em;
+}
+
+.pageTitleWithDefaultLogo {
+    /* To prevent the element from taking up too much space in mobile layouts */
+    width: 4.7em;
+}
+
+/* this can't be in a css variable in themes because older environments don't support urls in a variable */
+.darkContentContainer .pageTitleWithDefaultLogo {
+    background-image: url(../themes/logowhite.png);
+}
+
+.headerButton {
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+}
+
+/* dirty hack to detect support for column-gap in combination with flexbox, which is in Chrome 66+ and iOS 14.1+.
+   support for @supports with a selector became available around the same time
+*/
+@supports selector(:hover) and (display: revert) and (column-gap: 1em) {
+    .headerLeft, .headerRight {
+        -webkit-column-gap: .55em;
+        column-gap: .55em;
+    }
+
+    .headerSectionItem {
+        margin: 0 !important;
+    }
+
+    .headerSelectedPlayer {
+        -webkit-margin-end: -.5em !important;
+        margin-inline-end: -.5em !important;
+    }
+}
+
+.pageTitle-marginstart {
+    -webkit-margin-start: .5em !important;
+    margin-inline-start: .5em !important;
+}
+
+@media all and (display-mode: minimal-ui) {
+    .headerBackButton-showfullscreen {
+        display: none !important;
+    }
+}
+
+.headerUserButtonImage {
+    border-radius: 1000px;
+}
+
+.headroom-hidden.headroom-scrolling .headerSection {
+    visibility: hidden;
+}
+
+.skinHeader {
+    container-type: inline-size;
+    container-name: appheader;
+}
+
+/* this @supports shouldn't be necessary because browsers should ignore what they don't support, but that doesn't seem to be the case with tizen or legacy edge
+   don't use env as part of the supports check because then tizen falsely considers it supported
+*/
+@supports (height: calc(3.125em + 2 * max(3em,4em))) {
+    .skinHeader {
+        padding-top: max(1.2em, env(safe-area-inset-top, 0));
+    }
+}
+
+.skinHeader-withnowplaying {
+    padding-top: 0;
+}
+
+.headerMiddle {
+    overflow: hidden;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.headerMiddle-withSectionTabs {
+    width: 60%;
+}
+
+.headerLeft {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    overflow: hidden;
+    -webkit-padding-start: .85em;
+    padding-inline-start: .85em;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    /* don't allow this to cause the header to wrap on small screens */
+    max-width: 60%;
+}
+
+.headerRight {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    white-space: nowrap;
+    -webkit-padding-end: .85em;
+    padding-inline-end: .85em;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    -webkit-margin-start: auto;
+    margin-inline-start: auto;
+    max-width: 40%;
+}
+
+.headerLeft, .headerRight {
+    box-sizing: border-box;
+    -webkit-flex-shrink: 1;
+    flex-shrink: 1;
+    -webkit-flex-basis: auto;
+    flex-basis: auto;
+}
+
+.headerLeft, .headerRight, .headerMiddle {
+    /* This exists only to ensure the header is the same height with and without tabs */
+    height: 3.127em;
+}
+
+.headerTop-withSectionTabs .headerLeft, .headerTop-withSectionTabs .headerRight {
+    width: 20%;
+}
+
+.sectionTabs {
+    text-align: center;
+}
+
+.headerClock {
+    margin: 0 .25em;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 118%;
+}
+
+.headerSelectedPlayer {
+    font-weight: normal;
+    max-width: 10em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.button-help {
+    color: #42a5f5 !important;
+}
+
+.btnHeaderPremiere {
+    -webkit-margin-end: 1em;
+    margin-inline-end: 1em;
+}
+
+@media not all and (min-width: 48em) {
+    .btnHeaderPremiere {
+        display: none !important;
+    }
+}
+
+.tabs-viewmenubar {
+    border-radius: 100em;
+    /* this allows the slider to grow and still stay locked in place */
+    display: -webkit-flex;
+    display: flex;
+    container-type: initial !important;
+    container-name: tabs-viewmenubar !important;
+    padding-top: .25em;
+    padding-bottom: .25em;
+}
+
+.main-tab-button {
+    padding: 0 1.76ch !important;
+    border-radius: 100em !important;
+    max-width: 40ch;
+    /* fixed height to accomodate for icon buttons */
+    height: 1.8em;
+}

@@ -1,0 +1,12 @@
+.spotlightItemsContainer {
+    height: auto;
+}
+
+.spotlightButtonsItemsContainer {
+    container-type: initial;
+    height: auto;
+}
+
+.spotlightButtonCard-horizontal {
+    width: 33.333333%;
+}

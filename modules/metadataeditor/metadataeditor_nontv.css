@@ -1,0 +1,5 @@
+@media all and (pointer: fine) {
+    .checkboxLabel-lockedfield-embeddedintofield, .checkboxLabel-lockedfield-embeddedintoselect {
+        height: 2.4em;
+    }
+}

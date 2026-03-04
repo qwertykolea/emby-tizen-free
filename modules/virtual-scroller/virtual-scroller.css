@@ -1,0 +1,17 @@
+.virtual-scroller {
+    display: block;
+    position: relative;
+    contain: strict;
+}
+
+.virtual-scroller-overflowvisible {
+    contain: layout style size;
+}
+
+.virtualScrollItem {
+    position: absolute;
+}
+
+    .virtualScrollItem.listItem, .virtualScrollItem.dataGridItem {
+        width: 100%;
+    }

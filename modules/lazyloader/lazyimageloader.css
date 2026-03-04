@@ -1,0 +1,4 @@
+/* dirty hack that is needed when the InterSectionObserver polyfill is used */
+.lazy:not(.legacyLazyLoadImmediate) {
+    background-image: none !important;
+}

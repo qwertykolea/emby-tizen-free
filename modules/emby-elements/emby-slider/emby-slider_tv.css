@@ -1,0 +1,50 @@
+.sliderBubble {
+    -webkit-transform-origin: bottom center;
+    transform-origin: bottom center;
+    transition: -webkit-transform 340ms ease-out, opacity 200ms ease-out;
+    transition: transform 340ms ease-out, opacity 200ms ease-out;
+}
+
+/* this supports is just a fancy way to exclude legacy edge, which is having a lot of trouble with this transform */
+@supports selector(:hover) and (display: revert) and (column-gap: 1em) {
+
+    .sliderBubble {
+        -webkit-transform: translate3d(-50%, -100%, 0) scale(0);
+        transform: translate3d(-50%, -100%, 0) scale(0);
+    }
+}
+
+.sliderBubble-rtl {
+    -webkit-transform: translate3d(50%, -100%, 0);
+    transform: translate3d(50%, -100%, 0);
+}
+
+/* this supports is just a fancy way to exclude legacy edge, which is having a lot of trouble with this transform */
+@supports selector(:hover) and (display: revert) and (column-gap: 1em) {
+
+    .sliderBubble-rtl {
+        -webkit-transform: translate3d(50%, -100%, 0) scale(0);
+        transform: translate3d(50%, -100%, 0) scale(0);
+    }
+}
+
+.emby-slider:focus + .emby-slider-background + .emby-slider-thumb {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* .emby-slider:focus + .emby-slider-background {
+    transform: scale(1.01, 2);
+}
+
+.emby-slider.emby-slider-editing + .emby-slider-background {
+    transform: scale(1.01, 2);
+}
+
+.emby-slider[orient="vertical"]:focus + .emby-slider-background {
+    transform: scale(2, 1.01);
+}
+
+.emby-slider.emby-slider-editing[orient="vertical"] + .emby-slider-background {
+    transform: scale(2, 1.01);
+} */

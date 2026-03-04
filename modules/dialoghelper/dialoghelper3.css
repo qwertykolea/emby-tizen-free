@@ -1,0 +1,35 @@
+@media all and (min-width: 37em) and (min-height: 36em) {
+
+    .dialogBackdrop-auto {
+        background-color: transparent;
+        transition: none;
+    }
+
+    @media not all and (pointer: fine) {
+
+        .dialogBackdrop-blur {
+            transition: background ease-out 200ms, -webkit-backdrop-filter ease-out 200ms;
+        }
+
+        @supports (backrop-filter: blur(1em)) {
+            .dialogBackdrop-blur {
+                transition: background ease-out 200ms, backdrop-filter ease-out 200ms;
+            }
+        }
+
+        .dialogBackdrop-blur.dialogBackdropOpened {
+            -webkit-backdrop-filter: blur(.35em);
+        }
+    }
+}
+
+.dialog-noanimation {
+    -webkit-animation: initial !important;
+    animation: initial !important;
+}
+
+/*.view-withdialogtransition {
+    transform: scale(.92, .96);
+    transition: transform 300ms ease-out;
+    border-radius: 0.6em;
+}*/

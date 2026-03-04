@@ -1,0 +1,187 @@
+.emby-checkbox-label {
+    position: relative;
+    /* Not sure why we had this, but this is causing content to appear on top of the header when scrolling */
+    /* z-index: 1; */
+    vertical-align: middle;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-align-items: center;
+    align-items: center;
+    outline: none !important;
+}
+
+.checkboxFieldDescription {
+    -webkit-padding-start: 2.4em;
+    padding-inline-start: 2.4em;
+}
+
+.checkboxContainer {
+    /* this top margin is to offset the fact that the checkbox spills up outside the element and makes it look closer to the preceding element */
+    margin-top: .3em;
+    margin-bottom: 1.5em;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+}
+
+.checkboxListContainer {
+    margin-bottom: 1.41em;
+}
+
+.listItem .checkboxContainer {
+    margin-bottom: 0;
+}
+
+.checkboxContainer-withDescription {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.emby-checkbox {
+    position: absolute;
+    /* This is for focusing purposes, so the focusManager doesn't skip over it */
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none !important;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: transparent !important;
+}
+
+.checkboxLabel {
+    position: relative;
+    margin: 0;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    /* For the focus style */
+    border-radius: .42em;
+    /* For the focus style */
+    -webkit-padding-end: .5em;
+    padding-inline-end: .5em;
+    /* make sure it's on top of the focus ring */
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.emby-checkbox-notext + .checkboxLabel {
+    -webkit-padding-end: 0;
+    padding-inline-end: 0;
+}
+
+.checkboxList > .emby-checkbox-label, .checkboxList > .checkboxContainer {
+    display: -webkit-flex;
+    display: flex;
+    margin: .75em 0;
+}
+
+.checkboxListLabel {
+    margin-bottom: 1rem;
+}
+
+/* Outer box of the fake checkbox */
+.checkboxLabel::before {
+    content: "";
+    /* Needed for the line-height to take effect */
+    display: inline-block;
+    height: 1.56em;
+    width: 1.56em;
+    border: .16em solid;
+    border-radius: .3em;
+    position: static;
+    -webkit-margin-end: .5em;
+    margin-inline-end: .5em;
+    margin-top: -.18em;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+}
+
+.emby-checkbox-notext + .checkboxLabel::before {
+    -webkit-margin-end: 0;
+    margin-inline-end: 0;
+}
+
+.emby-checkbox[disabled] + .checkboxLabel::before {
+    opacity: 0.5;
+}
+
+/* Checkmark of the fake checkbox */
+.checkboxLabel::after {
+    position: absolute;
+    content: "";
+    /* Needed for the line-height to take effect */
+    display: inline-block;
+    height: .36em;
+    width: 1em;
+    border-left: .18em solid;
+    border-bottom: .18em solid;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: .32em;
+    left: .33em;
+    inset-inline-start: .33em;
+    inset-inline-end: initial;
+    color: #fff;
+}
+
+/* It would be nice to use this % based positioning all of the time, but it will require a markup change to give the selection box it's own element */
+.emby-checkbox-notext + .checkboxLabel::after {
+    position: absolute;
+    content: "";
+    /* Needed for the line-height to take effect */
+    display: inline-block;
+    height: .54em;
+    width: 1.18em;
+    border-left: .18em solid;
+    border-bottom: .18em solid;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 50%;
+    left: 50%;
+    inset-inline-start: 50%;
+    inset-inline-end: initial;
+    color: #fff;
+    margin-top: -0.4425em;
+    -webkit-margin-start: -.59em;
+    margin-inline-start: -.59em;
+    box-sizing: border-box;
+}
+
+/* Hide the checkmark by default */
+.emby-checkbox + .checkboxLabel::after {
+    display: none;
+}
+
+/* Unhide on the checked state */
+.emby-checkbox:checked + .checkboxLabel::after {
+    display: block;
+}
+
+.emby-checkbox-focusoutline {
+    display: none;
+    position: absolute;
+    top: -0.94em;
+    left: -0.78em;
+    inset-inline-start: -0.78em;
+    inset-inline-end: initial;
+    width: 3.4em;
+    height: 3.4em;
+    border-radius: 100em;
+}
+
+.emby-checkbox:focus-visible + .checkboxLabel + .emby-checkbox-focusoutline {
+    display: block;
+}

@@ -1,0 +1,4 @@
+.epgRow, .channelCell {
+    /* Using strict here will cause cells to become randomly invisible while scrolling in firefox */
+    contain: layout style paint;
+}
